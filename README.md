@@ -35,3 +35,6 @@ Fenster öffnen, verschieben, minimieren und maximieren.
 - Vite
 - Tailwind CSS
 - Lucide React
+
+
+**MOSTLY MADE BY AI AS A FUN PROJECT!**
