@@ -1,9 +1,18 @@
 import { Music2 } from "lucide-react";
 import { themes } from "../../data/desktop";
 import type { ThemeName } from "../../data/desktop";
+import loopingTheRooms from "../../assets/Looping the Rooms - rusino.mp4";
+import youngGirlA from "../../assets/siinamota - Young Girl A.mp4";
+import jama from "../../assets/syudou - 邪魔.mp4";
 
 export default function MusicApp({ theme }: { theme: typeof themes[ThemeName] }) {
-return (
+  const honorableMentions = [
+    { title: "Looping the Rooms", artist: "rusino", video: loopingTheRooms },
+    { title: "Young Girl A", artist: "siinamota", video: youngGirlA },
+    { title: "邪魔", artist: "syudou", video: jama },
+  ];
+
+  return (
     <div className={`p-7 ${theme.text}`}>
       <h2 className="mb-1 text-2xl font-bold">Music</h2>
       <p className={`mb-6 text-sm ${theme.muted}`}>
@@ -80,6 +89,35 @@ return (
               <span className={`text-xs ${theme.muted}`}>
                 {genre}
               </span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p className={`mb-1 text-xs font-semibold uppercase tracking-wider ${theme.muted}`}>
+          Honorable Mentions
+        </p>
+        <p className={`mb-3 text-sm ${theme.muted}`}>
+          Music videos I love
+        </p>
+
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          {honorableMentions.map(({ title, artist, video }) => (
+            <div
+              key={title}
+              className="rounded-xl bg-black/5 p-3"
+            >
+              <video
+                className="mb-2 aspect-video w-full rounded-lg bg-black"
+                controls
+                preload="metadata"
+                aria-label={`${title} by ${artist}`}
+              >
+                <source src={video} type="video/mp4" />
+              </video>
+              <p className="text-sm font-medium">{title}</p>
+              <p className={`text-xs ${theme.muted}`}>{artist}</p>
             </div>
           ))}
         </div>
