@@ -1,13 +1,11 @@
 import { Music2 } from "lucide-react";
 import { themes } from "../../data/desktop";
 import type { ThemeName } from "../../data/desktop";
-import loopingTheRooms from "../../assets/Looping the Rooms - rusino.mp4";
 import youngGirlA from "../../assets/siinamota - Young Girl A.mp4";
 import yotsuyaSan from "../../assets/四ツ谷さんによろしく - Eight.mp4";
 
 export default function MusicApp({ theme }: { theme: typeof themes[ThemeName] }) {
   const honorableMentions = [
-    { title: "Looping the Rooms", artist: "rusino", video: loopingTheRooms },
     { title: "Young Girl A", artist: "siinamota", video: youngGirlA },
     { title: "四ツ谷さんによろしく", artist: "Eight", video: yotsuyaSan },
   ];
