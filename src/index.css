@@ -22,3 +22,88 @@ button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
+
+@keyframes boot-enter {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.985);
+  }
+
+  @keyframes boot-exit {
+    to {
+      opacity: 0;
+    }
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes moon-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moon-glow {
+  50% {
+    box-shadow: 0 0 30px rgb(190 145 231 / 20%);
+  }
+}
+
+@keyframes star-twinkle {
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
+}
+
+@keyframes progress-shimmer {
+  to {
+    background-position: 200% center;
+  }
+}
+
+.boot-enter {
+  animation: boot-enter 700ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+.boot-exit {
+  animation: boot-exit 650ms ease-in both;
+  pointer-events: none;
+}
+
+.moon-orbit {
+  animation: moon-orbit 18s linear infinite;
+}
+
+.moon-glow {
+  animation: moon-glow 3s ease-in-out infinite;
+}
+
+.star-twinkle {
+  animation: star-twinkle 2.2s ease-in-out infinite;
+}
+
+.progress-shimmer {
+  background-size: 200% 100%;
+  animation: progress-shimmer 2.5s linear infinite;
+}
+
+.log-line {
+  animation: boot-enter 180ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boot-enter,
+  .boot-exit,
+  .moon-orbit,
+  .moon-glow,
+  .star-twinkle,
+  .progress-shimmer,
+  .log-line {
+    animation: none;
+  }
+}

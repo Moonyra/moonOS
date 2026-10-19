@@ -1,6 +1,6 @@
-# MiraOS Desktop
+# moonOS Desktop
 
-MiraOS Desktop ist eine interaktive Portfolio-Seite im Stil eines kleinen
+moonOS Desktop ist Yanniks interaktive Portfolio-Seite im Stil eines kleinen
 persönlichen Betriebssystems. Statt einer klassischen Landingpage kannst du
 Fenster öffnen, verschieben, minimieren und maximieren.
 
@@ -19,6 +19,14 @@ Fenster öffnen, verschieben, minimieren und maximieren.
 - Terminal-Befehle wie `help`, `apps`, `open`, `close`, `matrix`, `neofetch`
   und `fortune`
 - Taskbar mit Uhrzeit, Online-Status sowie CPU- und RAM-Anzeige
+
+## Projektstruktur
+
+- `src/App.tsx` verwaltet den Desktop-Zustand und das Fenstersystem
+- `src/components/` enthält wiederverwendbare Desktop-Komponenten
+- `src/components/apps/` enthält den Inhalt der einzelnen Fenster-Apps
+- `src/data/desktop.ts` definiert App-Registry, Themes und gemeinsame Typen
+- `src/assets/` enthält Medien für den Desktop
 
 ## Tech-Stack
 
